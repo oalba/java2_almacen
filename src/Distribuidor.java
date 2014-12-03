@@ -2,7 +2,7 @@
 public class Distribuidor {
 	//propiedades
 	private String nombre;
-	private String CIF;
+	private String cif;
 	private Direccion direccion;
 	private Contacto personaContacto;
 
@@ -13,11 +13,11 @@ public class Distribuidor {
 	public String getNombre(){
 		return nombre;
 	}
-	public void setCIF (String cif){
-		CIF = cif;
+	public void setCif (String cif){
+		cif = cif;
 	}
-	public String getCIF(){
-		return CIF;
+	public String getCif(){
+		return cif;
 	}
 	public void setDireccion (Direccion dir){
 		direccion = dir;

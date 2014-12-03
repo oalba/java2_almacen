@@ -1,0 +1,4 @@
+odei,11111111A;Gipuzkoa,Hernani,Ereñozu,79;iker,alba,ikikiki@gmail.com,666666666
+bb,22;bbbbbbb,bbbb,bbbb,88;jon,piorno,jpjpjpjp@gmail.com,677777777
+
+

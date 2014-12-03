@@ -1,0 +1,79 @@
+import java.util.*;
+import java.io.*;
+
+public class Almacen {
+	public static void main(String[] args) throws IOException {
+		ArrayList<Distribuidor> distribuidores = new ArrayList<Distribuidor>();
+		try {
+			File file = new File("/home/zubiri/AriketakJava/java2_almacen/src/distribuidores.txt");
+			FileReader fr = new FileReader(file);
+			BufferedReader br = new BufferedReader(fr);
+			String linea = br.readLine();
+
+			String [] parte;
+			while (linea!=null) {
+				parte = linea.split(",");
+				Distribuidor distribuidor = new Distribuidor();
+				System.out.println(linea);
+				distribuidor.setNombre(parte[0]);
+				distribuidor.setCIF(parte[1]);
+
+				Direccion direccion = new Direccion();
+				direccion.setPoblacion(parte[2]);
+				direccion.setLocalidad(parte[3]);
+				direccion.setCalle(parte[4]);
+				direccion.setNumero(Integer.parseInt(parte[5]));
+				distribuidor.setDireccion(direccion);
+
+				Contacto contacto = new Contacto();
+				//contacto.setNombre(parte[6]);
+				//contacto.setApellido(parte[7]);
+				//contacto.setEmail(parte[8]);
+				//contacto.setTelefono(Integer.parseInt(parte[9]));
+				distribuidor.setPersonaContacto(contacto);
+
+
+
+				//System.out.println(distribuidor.getNombre());
+				//System.out.println(distribuidor.getCIF());
+
+
+				distribuidores.add(distribuidor);
+				linea = br.readLine();
+			}
+
+			/*Iterator<Distribuidor> itrDistribuidor = distribuidores.iterator();
+			while(itrDistribuidor.hasNext()){
+				Distribuidor distri = itrDistribuidor.next();
+				
+				System.out.println(": " + distri.getNombre());
+				System.out.println(": " + distri.getCIF());
+				System.out.println();
+				
+			}*/
+
+
+			for (int i = 0; i < distribuidores.size(); i++) {
+				System.out.println(distribuidores.get(i).getNombre());
+				System.out.println(distribuidores.get(i).getCIF());
+				
+			}
+
+
+
+
+
+
+
+
+
+
+
+
+		 } catch (IOException ioe) {
+			System.out.println("Error: " + ioe);
+		}
+
+	}
+	
+}
