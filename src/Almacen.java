@@ -5,7 +5,7 @@ public class Almacen {
 	public static void main(String[] args) throws IOException {
 		ArrayList<Distribuidor> distribuidores = new ArrayList<Distribuidor>();
 		try {
-			File archivo = new File("/home/zubiri/AriketakJava/java2_almacen/src/distribuidores.txt");
+			File archivo = new File("./distribuidores.txt");
 			FileReader fr = new FileReader(archivo);
 			BufferedReader br = new BufferedReader(fr);
 			String linea = br.readLine();
@@ -17,7 +17,7 @@ public class Almacen {
 			while (linea != null) {
 				parte = linea.split(";");
 				Distribuidor distribuidor = new Distribuidor();
-				System.out.println(linea);
+				//System.out.println(linea);
 				parte1 = parte[0].split(",");
 				distribuidor.setNombre(parte[0]);
 				distribuidor.setCif(parte[1]);
