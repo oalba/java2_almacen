@@ -13,8 +13,8 @@ public class Distribuidor {
 	public String getNombre(){
 		return nombre;
 	}
-	public void setCif (String cf){
-		cif = cf;
+	public void setCif (String cif){
+		cif = cif;
 	}
 	public String getCif(){
 		return cif;
