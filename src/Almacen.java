@@ -10,12 +10,12 @@ public class Almacen {
 			BufferedReader br = new BufferedReader(fr);
 			String linea = br.readLine();
 
-			String [] parte = null;
-			String [] parte1 = null;
-			String [] parte2 = null;
-			String [] parte3 = null;
+			String[] parte = null;
+			String[] parte1 = null;
+			String[] parte2 = null;
+			String[] parte3 = null;
 			while (linea != null) {
-				parte = linea.split(";");
+				parte = linea.split("#");
 				Distribuidor distribuidor = new Distribuidor();
 				//System.out.println(linea);
 				parte1 = parte[0].split(",");
