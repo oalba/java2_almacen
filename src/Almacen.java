@@ -3,13 +3,69 @@ import java.io.*;
 
 public class Almacen {
 	public static void main(String[] args) throws IOException {
-		ArrayList<Distribuidor> distribuidores = new ArrayList<Distribuidor>();
 		try {
+			File archivo2 = new File("./clientes.txt");
+			FileReader fr2 = new FileReader(archivo2);
+			BufferedReader br2 = new BufferedReader(fr2);
+			String linea2 = br2.readLine();
+
+			ArrayList<Cliente> clientes = new ArrayList<Cliente>();
+			String [] partec = null;
+			String [] partec1 = null;
+			String [] partec2 = null;
+			while ((linea2 != null) || (linea2 == "")) {
+				partec = linea2.split(";");
+				Cliente cliente = new Cliente();
+				partec1 = partec[0].split(",");
+				cliente.setNombre(partec1[0]);
+				cliente.setApellidos(partec1[1]);
+				cliente.setDNI(partec1[2]);
+				cliente.setNum_Socio(Double.parseDouble(partec1[3]));
+				cliente.setDto(Double.parseDouble(partec1[4]));
+
+				partec2 = partec[1].split(",");
+				Direccion direccion = new Direccion();
+				direccion.setPoblacion(partec2[0]);
+				direccion.setLocalidad(partec2[1]);
+				direccion.setCalle(partec2[2]);
+				direccion.setNumero(Integer.parseInt(partec2[3]));
+				cliente.setDireccion(direccion);
+
+				clientes.add(cliente);
+				linea2 = br2.readLine();
+			}
+
+			Iterator<Cliente> itrCliente = clientes.iterator();
+			while(itrCliente.hasNext()){
+				Cliente clien = itrCliente.next();
+				
+				System.out.println("********Cliente********");
+				System.out.println("--Datos--");
+				System.out.println("Nombre: " + clien.getNombre());
+				System.out.println("Apellidos: " + clien.getApellidos());
+				System.out.println("DNI: " + clien.getDNI());
+				System.out.println("Número de socio: " + clien.getNum_Socio());
+				System.out.println("Descuento: " + clien.getDto());
+				System.out.println("--Direccion--");
+				System.out.println("Población: " + clien.getDireccion().getPoblacion());
+				System.out.println("Localidad: " + clien.getDireccion().getLocalidad());
+				System.out.println("Calle: " + clien.getDireccion().getCalle());
+				System.out.println("Número: " + clien.getDireccion().getNumero());
+				System.out.println();
+				
+			}
+
+
+
+
+			/*
+			//12 ariketararte
 			File archivo = new File("./distribuidores.txt");
 			FileReader fr = new FileReader(archivo);
 			BufferedReader br = new BufferedReader(fr);
 			String linea = br.readLine();
 
+			ArrayList<Distribuidor> distribuidores = new ArrayList<Distribuidor>();
 			String [] parte = null;
 			String [] parte1 = null;
 			String [] parte2 = null;
@@ -40,7 +96,10 @@ public class Almacen {
 				distribuidores.add(distribuidor);
 				linea = br.readLine();
 			}
+			*/
 
+			/*
+			//12 ariketa
 			ArrayList<Manzana> amanzana = new ArrayList<Manzana>();
 			Scanner scm = new Scanner(System.in);
 			String nombred;
@@ -182,10 +241,12 @@ public class Almacen {
 				System.out.println("Teléfono: " + leche.getDistribuidor().getPersonaContacto().getTelefono());
 				System.out.println();
 				
-			}
+			}*/
 
 
-			/*Iterator<Distribuidor> itrDistribuidor = distribuidores.iterator();
+			/*
+			//11 arriketa
+			Iterator<Distribuidor> itrDistribuidor = distribuidores.iterator();
 			while(itrDistribuidor.hasNext()){
 				Distribuidor distri = itrDistribuidor.next();
 				
@@ -205,7 +266,7 @@ public class Almacen {
 				System.out.println("Teléfono: " + distri.getPersonaContacto().getTelefono());
 				System.out.println();
 				
-			}*/
+			}
 
 			/*for (int i = 0; i < distribuidores.size(); i++) {
 				System.out.println(distribuidores.get(i).getNombre());
@@ -222,6 +283,7 @@ public class Almacen {
             	System.out.println(distribuidores.get(i).getPersonaContacto().getTelefono());
 				
 			}*/
+			//*/
 
 		 } catch (IOException ioe) {
 			System.out.println("Error: " + ioe);

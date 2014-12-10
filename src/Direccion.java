@@ -1,4 +1,3 @@
-
 public class Direccion {
 
 	//añadid las propiedades convenientes
