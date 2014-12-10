@@ -46,15 +46,15 @@ public class Almacen {
 			String nombred;
 			for (int m = 0; m < 2; m++) {
 				Manzana manzana = new Manzana();
-				System.out.println("Tipo manzana");
+				System.out.println("Tipo de manzana:");
 				manzana.setTipoManzana(scm.next());
-				System.out.println();
+				System.out.println("Procedencia: ");
 				manzana.setProcedencia(scm.next());
-				System.out.println();
+				System.out.println("Color: ");
 				manzana.setColor(scm.next());
-				System.out.println();
+				System.out.println("Precio (€ por Kg): ");
 				manzana.setEurosKilo(scm.nextDouble());
-				System.out.println();
+				System.out.println("Nombre del distribuidor: ");
 				nombred = scm.next();
 				for (int i = 0; i < distribuidores.size(); i++) {
 					if (nombred.equalsIgnoreCase(distribuidores.get(i).getNombre())) {
@@ -63,14 +63,58 @@ public class Almacen {
 				}
 				amanzana.add(manzana);
 			}
+
+			ArrayList<Lechuga> alechuga = new ArrayList<Lechuga>();
+			Scanner sclu = new Scanner(System.in);
+			for (int m = 0; m < 1; m++) {
+				Lechuga lechuga = new Lechuga();
+				System.out.println("Tipo de lechuga:");
+				lechuga.setTipoLechuga(sclu.next());
+				System.out.println("Procedencia: ");
+				lechuga.setProcedencia(sclu.next());
+				System.out.println("Color: ");
+				lechuga.setColor(sclu.next());
+				System.out.println("Precio (€ por unidad): ");
+				lechuga.setEurosUnidad(sclu.nextDouble());
+				System.out.println("Nombre del distribuidor: ");
+				nombred = sclu.next();
+				for (int i = 0; i < distribuidores.size(); i++) {
+					if (nombred.equalsIgnoreCase(distribuidores.get(i).getNombre())) {
+						lechuga.setDistribuidor(distribuidores.get(i));
+					}
+				}
+				alechuga.add(lechuga);
+			}
+
+			ArrayList<Leche> aleche = new ArrayList<Leche>();
+			Scanner scle = new Scanner(System.in);
+			for (int m = 0; m < 2; m++) {
+				Leche leche = new Leche();
+				System.out.println("Tipo de leche:");
+				leche.setTipo(scle.next());
+				System.out.println("Procedencia: ");
+				leche.setProcedencia(scle.next());
+				System.out.println("Precio (€ por L): ");
+				leche.setEurosLitro(scle.nextDouble());
+				System.out.println("Nombre del distribuidor: ");
+				nombred = scle.next();
+				for (int i = 0; i < distribuidores.size(); i++) {
+					if (nombred.equalsIgnoreCase(distribuidores.get(i).getNombre())) {
+						leche.setDistribuidor(distribuidores.get(i));
+					}
+				}
+				aleche.add(leche);
+			}
+
+
 			Iterator<Manzana> itrManzana = amanzana.iterator();
 			while(itrManzana.hasNext()){
 				Manzana manza = itrManzana.next();
-				
-				System.out.println(": " + manza.getTipoManzana());
-				System.out.println("" + manza.getProcedencia());
-				System.out.println("" + manza.getColor());
-				System.out.println("" + manza.getEurosKilo());
+				System.out.println("#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#");
+				System.out.println("Tipo de manzana: " + manza.getTipoManzana());
+				System.out.println("Procedencia: " + manza.getProcedencia());
+				System.out.println("Color: " + manza.getColor());
+				System.out.println("Precio (€ por Kg): " + manza.getEurosKilo());
 				System.out.println("********Distribuidor********");
 				System.out.println("--Datos--");
 				System.out.println("Nombre: " + manza.getDistribuidor().getNombre());
@@ -89,25 +133,56 @@ public class Almacen {
 				
 			}
 
+			Iterator<Lechuga> itrLechuga = alechuga.iterator();
+			while(itrLechuga.hasNext()){
+				Lechuga lechu = itrLechuga.next();
+				System.out.println("#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#");
+				System.out.println("Tipo de lechuga: " + lechu.getTipoLechuga());
+				System.out.println("Procedencia: " + lechu.getProcedencia());
+				System.out.println("Color: " + lechu.getColor());
+				System.out.println("Precio (€ por unidad): " + lechu.getEurosUnidad());
+				System.out.println("********Distribuidor********");
+				System.out.println("--Datos--");
+				System.out.println("Nombre: " + lechu.getDistribuidor().getNombre());
+				System.out.println("CIF: " + lechu.getDistribuidor().getCif());
+				System.out.println("--Direccion--");
+				System.out.println("Población: " + lechu.getDistribuidor().getDireccion().getPoblacion());
+				System.out.println("Localidad: " + lechu.getDistribuidor().getDireccion().getLocalidad());
+				System.out.println("Calle: " + lechu.getDistribuidor().getDireccion().getCalle());
+				System.out.println("Número: " + lechu.getDistribuidor().getDireccion().getNumero());
+				System.out.println("--Contacto--");
+				System.out.println("Nombre: " + lechu.getDistribuidor().getPersonaContacto().getNombre());
+				System.out.println("Apellido: " + lechu.getDistribuidor().getPersonaContacto().getApellido());
+				System.out.println("E-mail: " + lechu.getDistribuidor().getPersonaContacto().getEmail());
+				System.out.println("Teléfono: " + lechu.getDistribuidor().getPersonaContacto().getTelefono());
+				System.out.println();
+				
+			}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+			Iterator<Leche> itrLeche = aleche.iterator();
+			while(itrLeche.hasNext()){
+				Leche leche = itrLeche.next();
+				System.out.println("#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#");
+				System.out.println("Tipo de leche: " + leche.getTipo());
+				System.out.println("Procedencia: " + leche.getProcedencia());
+				System.out.println("Precio (€ por L): " + leche.getEurosLitro());
+				System.out.println("********Distribuidor********");
+				System.out.println("--Datos--");
+				System.out.println("Nombre: " + leche.getDistribuidor().getNombre());
+				System.out.println("CIF: " + leche.getDistribuidor().getCif());
+				System.out.println("--Direccion--");
+				System.out.println("Población: " + leche.getDistribuidor().getDireccion().getPoblacion());
+				System.out.println("Localidad: " + leche.getDistribuidor().getDireccion().getLocalidad());
+				System.out.println("Calle: " + leche.getDistribuidor().getDireccion().getCalle());
+				System.out.println("Número: " + leche.getDistribuidor().getDireccion().getNumero());
+				System.out.println("--Contacto--");
+				System.out.println("Nombre: " + leche.getDistribuidor().getPersonaContacto().getNombre());
+				System.out.println("Apellido: " + leche.getDistribuidor().getPersonaContacto().getApellido());
+				System.out.println("E-mail: " + leche.getDistribuidor().getPersonaContacto().getEmail());
+				System.out.println("Teléfono: " + leche.getDistribuidor().getPersonaContacto().getTelefono());
+				System.out.println();
+				
+			}
 
 
 			/*Iterator<Distribuidor> itrDistribuidor = distribuidores.iterator();

@@ -1,2 +1,4 @@
-odei,11111111A;Gipuzkoa,Hernani,Ereñozu,79;iker,alba,ikikiki@gmail.com,666666666
-bb,22;bbbbbbb,bbbb,bbbb,88;jon,piorno,jpjpjpjp@gmail.com,677777777
+odei,11111111A;Gipuzkoa,Hernani,Ereñozu,79;iker,alba,ikeralba@gmail.com,666666666
+jon,22222222B;Gipuzkoa,Errenteria,Beraun,88;jon,auzmendi,jonauzmendi@gmail.com,677777777
+telmo,33333333C;Gipuzkoa,Donostia,Txirrita,17;telmo,arzelus,telmoarzelus@gmail.com,688888888
+egoitz,44444444D;Gipuzkoa,Lasarte,Oria,30;egoitz,barrena,egoitzbarrena@gmail.com,699999999
