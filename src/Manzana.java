@@ -5,6 +5,7 @@ public class Manzana {
 	private String color;
 	private Double eurosKilo;
 	private Distribuidor distribuidor;
+	private int cod_barras;
 
 	//métodos getter y setter
 	public void setTipoManzana (String tm){
@@ -36,6 +37,12 @@ public class Manzana {
 	}
 	public Distribuidor getDistribuidor(){
 		return distribuidor;
+	}
+	public void setCod_Barras (Integer cb){
+		cod_barras = cb;
+	}
+	public Integer getCod_Barras(){
+		return cod_barras;
 	}
 
 }

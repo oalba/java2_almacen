@@ -4,6 +4,128 @@ import java.io.*;
 public class Almacen {
 	public static void main(String[] args) throws IOException {
 		try {
+			/*File archivo = new File("./distribuidores.txt");
+			FileReader fr = new FileReader(archivo);
+			BufferedReader br = new BufferedReader(fr);
+			String linea = br.readLine();
+
+			ArrayList<Distribuidor> distribuidores = new ArrayList<Distribuidor>();
+			String [] parte = null;
+			String [] parte1 = null;
+			String [] parte2 = null;
+			String [] parte3 = null;
+			while ((linea != null) || (linea == "")) {
+				parte = linea.split(";");
+				Distribuidor distribuidor = new Distribuidor();
+				parte1 = parte[0].split(",");
+				distribuidor.setNombre(parte1[0]);
+				distribuidor.setCif(parte1[1]);
+
+				parte2 = parte[1].split(",");
+				Direccion direccion = new Direccion();
+				direccion.setPoblacion(parte2[0]);
+				direccion.setLocalidad(parte2[1]);
+				direccion.setCalle(parte2[2]);
+				direccion.setNumero(Integer.parseInt(parte2[3]));
+				distribuidor.setDireccion(direccion);
+
+				parte3 = parte[2].split(",");
+				Contacto contacto = new Contacto();
+				contacto.setNombre(parte3[0]);
+				contacto.setApellido(parte3[1]);
+				contacto.setEmail(parte3[2]);
+				contacto.setTelefono(Integer.parseInt(parte3[3]));
+				distribuidor.setPersonaContacto(contacto);
+
+				distribuidores.add(distribuidor);
+				linea = br.readLine();
+			}*/
+			
+			/*
+			File archivo2 = new File("./clientes.txt");
+			FileReader fr2 = new FileReader(archivo2);
+			BufferedReader br2 = new BufferedReader(fr2);
+			String linea2 = br2.readLine();
+
+			ArrayList<Cliente> clientes = new ArrayList<Cliente>();
+			String [] partec = null;
+			String [] partec1 = null;
+			String [] partec2 = null;
+			while ((linea2 != null) || (linea2 == "")) {
+				partec = linea2.split(";");
+				Cliente cliente = new Cliente();
+				partec1 = partec[0].split(",");
+				cliente.setNombre(partec1[0]);
+				cliente.setApellidos(partec1[1]);
+				cliente.setDNI(partec1[2]);
+				cliente.setNum_Socio(Double.parseDouble(partec1[3]));
+				cliente.setDto(Double.parseDouble(partec1[4]));
+
+				partec2 = partec[1].split(",");
+				Direccion direccion = new Direccion();
+				direccion.setPoblacion(partec2[0]);
+				direccion.setLocalidad(partec2[1]);
+				direccion.setCalle(partec2[2]);
+				direccion.setNumero(Integer.parseInt(partec2[3]));
+				cliente.setDireccion(direccion);
+
+				clientes.add(cliente);
+				linea2 = br2.readLine();
+			}
+			*/
+
+
+
+
+
+
+
+
+
+
+
+
+			Scanner sc = new Scanner(System.in);
+			Double socio;
+			int cant_prod;
+			System.out.println("Introduce tu número de socio: ");
+			socio = sc.nextDouble();
+			System.out.println("¿Cuantos productos quieres añadir?");
+			cant_prod = sc.nextInt();
+			for (int c = 0; c < cant_prod; c++) {
+				System.out.println("Introduce el código de barras del producto: ");
+				
+				/*ArrayList<Producto> aproducto = new ArrayList<Producto>();
+				//Scanner scm = new Scanner(System.in);
+				String nombred;
+				for (int m = 0; m < 2; m++) {
+					Manzana manzana = new Manzana();
+					System.out.println("Tipo de manzana:");
+					manzana.setTipoManzana(scm.next());
+					System.out.println("Procedencia: ");
+					manzana.setProcedencia(scm.next());
+					System.out.println("Color: ");
+					manzana.setColor(scm.next());
+					System.out.println("Precio (€ por Kg): ");
+					manzana.setEurosKilo(scm.nextDouble());
+					System.out.println("Nombre del distribuidor: ");
+					nombred = scm.next();
+					for (int i = 0; i < distribuidores.size(); i++) {
+						if (nombred.equalsIgnoreCase(distribuidores.get(i).getNombre())) {
+							manzana.setDistribuidor(distribuidores.get(i));
+						}
+					}
+					amanzana.add(manzana);
+				}*/
+
+			}
+
+
+
+
+
+			/*
+			//13 Ariketararte
 			File archivo2 = new File("./clientes.txt");
 			FileReader fr2 = new FileReader(archivo2);
 			BufferedReader br2 = new BufferedReader(fr2);
@@ -53,7 +175,7 @@ public class Almacen {
 				System.out.println("Número: " + clien.getDireccion().getNumero());
 				System.out.println();
 				
-			}
+			}*/
 
 
 
@@ -268,22 +390,24 @@ public class Almacen {
 				
 			}
 
-			/*for (int i = 0; i < distribuidores.size(); i++) {
-				System.out.println(distribuidores.get(i).getNombre());
-				System.out.println(distribuidores.get(i).getCif());
+			//Honek ez du balio
+			//for (int i = 0; i < distribuidores.size(); i++) {
+				//System.out.println(distribuidores.get(i).getNombre());
+				//System.out.println(distribuidores.get(i).getCif());
 
-				System.out.println(distribuidores.get(i).getDireccion().getPoblacion());
-            	System.out.println(distribuidores.get(i).getDireccion().getLocalidad());
-            	System.out.println(distribuidores.get(i).getDireccion().getCalle());
-            	System.out.println(distribuidores.get(i).getDireccion().getNumero());
+				//System.out.println(distribuidores.get(i).getDireccion().getPoblacion());
+            	//System.out.println(distribuidores.get(i).getDireccion().getLocalidad());
+            	//System.out.println(distribuidores.get(i).getDireccion().getCalle());
+            	//System.out.println(distribuidores.get(i).getDireccion().getNumero());
   
-            	System.out.println(distribuidores.get(i).getPersonaContacto().getNombre());
-            	System.out.println(distribuidores.get(i).getPersonaContacto().getApellido());
-            	System.out.println(distribuidores.get(i).getPersonaContacto().getEmail());
-            	System.out.println(distribuidores.get(i).getPersonaContacto().getTelefono());
+            	//System.out.println(distribuidores.get(i).getPersonaContacto().getNombre());
+            	//System.out.println(distribuidores.get(i).getPersonaContacto().getApellido());
+            	//System.out.println(distribuidores.get(i).getPersonaContacto().getEmail());
+            	//System.out.println(distribuidores.get(i).getPersonaContacto().getTelefono());
 				
-			}*/
-			//*/
+			//}
+			*/
+			
 
 		 } catch (IOException ioe) {
 			System.out.println("Error: " + ioe);

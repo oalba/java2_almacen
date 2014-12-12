@@ -5,6 +5,7 @@ public class Leche {
 	private String procedencia;
 	private Double eurosLitro;
 	private Distribuidor distribuidor;
+	private int cod_barras;
 
 	//métodos getter y setter
 	public void setTipo (String tip){
@@ -30,5 +31,11 @@ public class Leche {
 	}
 	public Distribuidor getDistribuidor(){
 		return distribuidor;
+	}
+	public void setCod_Barras (Integer cb){
+		cod_barras = cb;
+	}
+	public Integer getCod_Barras(){
+		return cod_barras;
 	}
 }
