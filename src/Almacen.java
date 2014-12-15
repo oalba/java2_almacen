@@ -136,17 +136,19 @@ public class Almacen {
 			}
 			alechuga.add(lechuga);
 
-/*
+
 			ArrayList<Leche> aleche = new ArrayList<Leche>();
 			Leche leche = new Leche();
-			System.out.println("Tipo de leche:");
-			leche.setTipo(scle.next());
-			System.out.println("Procedencia: ");
-			leche.setProcedencia(scle.next());
-			System.out.println("Precio (€ por L): ");
-			leche.setEurosLitro(scle.nextDouble());
-			System.out.println("Nombre del distribuidor: ");
-			nombred = scle.next();
+			//Tipo de leche
+			leche.setTipo("vaca");
+			//Procedencia
+			leche.setProcedencia("Asturias");
+			//precio
+			leche.setEurosLitro(1.0);
+			//codigo de barras
+			leche.setCod_Barras(3001);
+			//distribuidor
+			nombred = "jon";
 			for (int i = 0; i < distribuidores.size(); i++) {
 				if (nombred.equalsIgnoreCase(distribuidores.get(i).getNombre())) {
 					leche.setDistribuidor(distribuidores.get(i));
@@ -154,7 +156,7 @@ public class Almacen {
 			}
 			aleche.add(leche);
 			
-*/
+
 
 
 
