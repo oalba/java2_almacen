@@ -4,7 +4,8 @@ import java.io.*;
 public class Almacen {
 	public static void main(String[] args) throws IOException {
 		try {
-			/*File archivo = new File("./distribuidores.txt");
+			
+			File archivo = new File("./distribuidores.txt");
 			FileReader fr = new FileReader(archivo);
 			BufferedReader br = new BufferedReader(fr);
 			String linea = br.readLine();
@@ -39,9 +40,10 @@ public class Almacen {
 
 				distribuidores.add(distribuidor);
 				linea = br.readLine();
-			}*/
+			}
 			
-			/*
+			
+			
 			File archivo2 = new File("./clientes.txt");
 			FileReader fr2 = new FileReader(archivo2);
 			BufferedReader br2 = new BufferedReader(fr2);
@@ -72,7 +74,87 @@ public class Almacen {
 				clientes.add(cliente);
 				linea2 = br2.readLine();
 			}
-			*/
+			
+			ArrayList<Manzana> amanzana = new ArrayList<Manzana>();
+			String nombred;
+			Manzana manzana = new Manzana();
+			//tipo de manzana
+			manzana.setTipoManzana("Golden");
+			//procedencia
+			manzana.setProcedencia("EEUU");
+			//color
+			manzana.setColor("Verde");
+			//precio
+			manzana.setEurosKilo(3.0);
+			//codigo de barras
+			manzana.setCod_Barras(1001);
+			//distribuidor
+			nombred = "odei";
+			for (int i = 0; i < distribuidores.size(); i++) {
+				if (nombred.equalsIgnoreCase(distribuidores.get(i).getNombre())) {
+					manzana.setDistribuidor(distribuidores.get(i));
+				}
+			}
+			amanzana.add(manzana);
+			//tipo de manzana
+			manzana.setTipoManzana("Red");
+			//procedencia
+			manzana.setProcedencia("España");
+			//color
+			manzana.setColor("Rojo");
+			//precio
+			manzana.setEurosKilo(2.0);
+			//codigo de barras
+			manzana.setCod_Barras(1002);
+			//distribuidor
+			nombred = "odei";
+			for (int i = 0; i < distribuidores.size(); i++) {
+				if (nombred.equalsIgnoreCase(distribuidores.get(i).getNombre())) {
+					manzana.setDistribuidor(distribuidores.get(i));
+				}
+			}
+			amanzana.add(manzana);
+
+			ArrayList<Lechuga> alechuga = new ArrayList<Lechuga>();
+			Lechuga lechuga = new Lechuga();
+			//Tipo de lechuga
+			lechuga.setTipoLechuga("Normal");
+			//procedencia
+			lechuga.setProcedencia("francia");
+			//color
+			lechuga.setColor("verde");
+			//precio
+			lechuga.setEurosUnidad(1.0);
+			//codigo de barras
+			lechuga.setCod_Barras(2001);
+			//distribuidor
+			nombred = "telmo";
+			for (int i = 0; i < distribuidores.size(); i++) {
+				if (nombred.equalsIgnoreCase(distribuidores.get(i).getNombre())) {
+					lechuga.setDistribuidor(distribuidores.get(i));
+				}
+			}
+			alechuga.add(lechuga);
+
+/*
+			ArrayList<Leche> aleche = new ArrayList<Leche>();
+			Leche leche = new Leche();
+			System.out.println("Tipo de leche:");
+			leche.setTipo(scle.next());
+			System.out.println("Procedencia: ");
+			leche.setProcedencia(scle.next());
+			System.out.println("Precio (€ por L): ");
+			leche.setEurosLitro(scle.nextDouble());
+			System.out.println("Nombre del distribuidor: ");
+			nombred = scle.next();
+			for (int i = 0; i < distribuidores.size(); i++) {
+				if (nombred.equalsIgnoreCase(distribuidores.get(i).getNombre())) {
+					leche.setDistribuidor(distribuidores.get(i));
+				}
+			}
+			aleche.add(leche);
+			
+*/
 
 
 
@@ -80,9 +162,7 @@ public class Almacen {
 
 
 
-
-
-
+/*
 
 
 			Scanner sc = new Scanner(System.in);
@@ -95,7 +175,7 @@ public class Almacen {
 			for (int c = 0; c < cant_prod; c++) {
 				System.out.println("Introduce el código de barras del producto: ");
 				
-				/*ArrayList<Producto> aproducto = new ArrayList<Producto>();
+				ArrayList<Producto> aproducto = new ArrayList<Producto>();
 				//Scanner scm = new Scanner(System.in);
 				String nombred;
 				for (int m = 0; m < 2; m++) {
@@ -116,13 +196,25 @@ public class Almacen {
 						}
 					}
 					amanzana.add(manzana);
-				}*/
+				}
 
 			}
 
 
+*/
 
 
+
+
+
+
+
+
+
+
+
+
+//EZ BORRATU EZER!!!!
 
 			/*
 			//13 Ariketararte
