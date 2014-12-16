@@ -5,7 +5,7 @@ public class Cliente {
 	private String apellidos;
 	private String DNI;
 	private Direccion direccion;
-	private Double num_socio;
+	private int num_socio;
 	private Double dto;
 
 	//métodos getter y setter
@@ -33,10 +33,10 @@ public class Cliente {
 	public Direccion getDireccion(){
 		return direccion;
 	}
-	public void setNum_Socio (Double ns){
+	public void setNum_Socio (int ns){
 		num_socio = ns;
 	}
-	public Double getNum_Socio(){
+	public int getNum_Socio(){
 		return num_socio;
 	}
 	public void setDto (Double dt){

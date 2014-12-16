@@ -60,7 +60,7 @@ public class Almacen {
 				cliente.setNombre(partec1[0]);
 				cliente.setApellidos(partec1[1]);
 				cliente.setDNI(partec1[2]);
-				cliente.setNum_Socio(Double.parseDouble(partec1[3]));
+				cliente.setNum_Socio(Integer.parseInt(partec1[3]));
 				cliente.setDto(Double.parseDouble(partec1[4]));
 
 				partec2 = partec[1].split(",");
@@ -75,6 +75,7 @@ public class Almacen {
 				linea2 = br2.readLine();
 			}
 			
+			//ArrayList<Producto> aproducto = new ArrayList<Producto>();
 			ArrayList<Manzana> amanzana = new ArrayList<Manzana>();
 			String nombred;
 			Manzana manzana = new Manzana();
@@ -96,6 +97,7 @@ public class Almacen {
 				}
 			}
 			amanzana.add(manzana);
+
 			//tipo de manzana
 			manzana.setTipoManzana("Red");
 			//procedencia
@@ -164,46 +166,65 @@ public class Almacen {
 
 
 
-/*
+
 
 
 			Scanner sc = new Scanner(System.in);
-			Double socio;
+			int socio;
 			int cant_prod;
+			int cod_barras;
+			Double ptotal = 0.0;
+			Double desc;
+			Cesta cesta = new Cesta();
 			System.out.println("Introduce tu número de socio: ");
-			socio = sc.nextDouble();
+			socio = sc.nextInt();
 			System.out.println("¿Cuantos productos quieres añadir?");
 			cant_prod = sc.nextInt();
 			for (int c = 0; c < cant_prod; c++) {
 				System.out.println("Introduce el código de barras del producto: ");
-				
-				ArrayList<Producto> aproducto = new ArrayList<Producto>();
-				//Scanner scm = new Scanner(System.in);
-				String nombred;
-				for (int m = 0; m < 2; m++) {
-					Manzana manzana = new Manzana();
-					System.out.println("Tipo de manzana:");
-					manzana.setTipoManzana(scm.next());
-					System.out.println("Procedencia: ");
-					manzana.setProcedencia(scm.next());
-					System.out.println("Color: ");
-					manzana.setColor(scm.next());
-					System.out.println("Precio (€ por Kg): ");
-					manzana.setEurosKilo(scm.nextDouble());
-					System.out.println("Nombre del distribuidor: ");
-					nombred = scm.next();
-					for (int i = 0; i < distribuidores.size(); i++) {
-						if (nombred.equalsIgnoreCase(distribuidores.get(i).getNombre())) {
-							manzana.setDistribuidor(distribuidores.get(i));
-						}
+				cod_barras = sc.nextInt();
+				ArrayList<Cesta> acesta = new ArrayList<Cesta>();
+				for (int m = 0; m < amanzana.size(); m++) {
+					if(cod_barras == amanzana.get(m).getCod_Barras()){
+						cesta.setAmanzana(amanzana);
+						acesta.add(cesta);
+						ptotal = ptotal + amanzana.get(m).getEurosKilo();
 					}
-					amanzana.add(manzana);
+					//System.out.println(ptotal);
 				}
-
+				for (int le = 0; le < alechuga.size(); le++) {
+					if(cod_barras == alechuga.get(le).getCod_Barras()){
+						cesta.setAlechuga(alechuga);
+						acesta.add(cesta);
+						ptotal = ptotal + alechuga.get(le).getEurosUnidad();
+					}
+					//System.out.println(ptotal);
+				}
+				for (int lee = 0; lee < aleche.size(); lee++) {
+					if(cod_barras == aleche.get(lee).getCod_Barras()){
+						cesta.setAleche(aleche);
+						acesta.add(cesta);
+						ptotal = ptotal + aleche.get(lee).getEurosLitro();
+					}
+					//System.out.println(ptotal);
+				}				
 			}
+			System.out.println("El precio total sin el descuento es: " + ptotal);
+
+			for (int so = 0; so < clientes.size(); so++){
+				if(socio == clientes.get(so).getNum_Socio()){
+					desc = clientes.get(so).getDto();
+					ptotal = ptotal - ((ptotal*desc)/100);
+					System.out.println("Tu descuento es del " + desc + "%");
+				}
+			}
+			//ptotal = (ptotal-desc);
+
+			System.out.println("El precio total con el descuento es: " + ptotal);
 
 
-*/
+
+
 
 
 
@@ -236,7 +257,7 @@ public class Almacen {
 				cliente.setNombre(partec1[0]);
 				cliente.setApellidos(partec1[1]);
 				cliente.setDNI(partec1[2]);
-				cliente.setNum_Socio(Double.parseDouble(partec1[3]));
+				cliente.setNum_Socio(Integer.parseInt(partec1[3]));
 				cliente.setDto(Double.parseDouble(partec1[4]));
 
 				partec2 = partec[1].split(",");
