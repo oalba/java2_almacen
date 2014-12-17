@@ -97,25 +97,28 @@ public class Almacen {
 				}
 			}
 			amanzana.add(manzana);
+			//System.out.println(manzana);
 
+			Manzana manzana2 = new Manzana();
 			//tipo de manzana
-			manzana.setTipoManzana("Red");
+			manzana2.setTipoManzana("Red");
 			//procedencia
-			manzana.setProcedencia("España");
+			manzana2.setProcedencia("España");
 			//color
-			manzana.setColor("Rojo");
+			manzana2.setColor("Rojo");
 			//precio
-			manzana.setEurosKilo(2.0);
+			manzana2.setEurosKilo(2.0);
 			//codigo de barras
-			manzana.setCod_Barras(1002);
+			manzana2.setCod_Barras(1002);
 			//distribuidor
 			nombred = "odei";
 			for (int i = 0; i < distribuidores.size(); i++) {
 				if (nombred.equalsIgnoreCase(distribuidores.get(i).getNombre())) {
-					manzana.setDistribuidor(distribuidores.get(i));
+					manzana2.setDistribuidor(distribuidores.get(i));
 				}
 			}
-			amanzana.add(manzana);
+			amanzana.add(manzana2);
+			//System.out.println(manzana);
 
 			ArrayList<Lechuga> alechuga = new ArrayList<Lechuga>();
 			Lechuga lechuga = new Lechuga();
@@ -157,23 +160,15 @@ public class Almacen {
 				}
 			}
 			aleche.add(leche);
-			
-
-
-
-
-
-
-
-
-
-
 
 			Scanner sc = new Scanner(System.in);
 			int socio;
 			int cant_prod;
 			int cod_barras;
 			Double ptotal = 0.0;
+			Double mtotal = 0.0;
+			Double lutotal = 0.0;
+			Double letotal = 0.0;
 			Double desc;
 			Cesta cesta = new Cesta();
 			System.out.println("Introduce tu número de socio: ");
@@ -188,7 +183,8 @@ public class Almacen {
 					if(cod_barras == amanzana.get(m).getCod_Barras()){
 						cesta.setAmanzana(amanzana);
 						acesta.add(cesta);
-						ptotal = ptotal + amanzana.get(m).getEurosKilo();
+						mtotal = mtotal + amanzana.get(m).getEurosKilo();
+						//System.out.println(mtotal);
 					}
 					//System.out.println(ptotal);
 				}
@@ -196,7 +192,8 @@ public class Almacen {
 					if(cod_barras == alechuga.get(le).getCod_Barras()){
 						cesta.setAlechuga(alechuga);
 						acesta.add(cesta);
-						ptotal = ptotal + alechuga.get(le).getEurosUnidad();
+						lutotal = lutotal + alechuga.get(le).getEurosUnidad();
+						//System.out.println(lutotal);
 					}
 					//System.out.println(ptotal);
 				}
@@ -204,10 +201,12 @@ public class Almacen {
 					if(cod_barras == aleche.get(lee).getCod_Barras()){
 						cesta.setAleche(aleche);
 						acesta.add(cesta);
-						ptotal = ptotal + aleche.get(lee).getEurosLitro();
+						letotal = letotal + aleche.get(lee).getEurosLitro();
+						//System.out.println(letotal);
 					}
-					//System.out.println(ptotal);
-				}				
+				}	
+				ptotal = mtotal + lutotal + letotal;
+				//System.out.println(ptotal);			
 			}
 			System.out.println("El precio total sin el descuento es: " + ptotal);
 
@@ -221,19 +220,6 @@ public class Almacen {
 			//ptotal = (ptotal-desc);
 
 			System.out.println("El precio total con el descuento es: " + ptotal);
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
