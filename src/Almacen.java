@@ -53,19 +53,24 @@ public class Almacen {
 
 			ArrayList<Cliente> clientes = new ArrayList<Cliente>();
 			String [] partec = null;
-			String [] partec1 = null;
+			//String [] partec1 = null;
 			String [] partec2 = null;
 			while ((linea2 != null) || (linea2 == "")) {
 				partec = linea2.split(";");
 				Cliente cliente = new Cliente();
-				partec1 = partec[0].split(",");
+				/*partec1 = partec[0].split(",");
 				cliente.setNombre(partec1[0]);
 				cliente.setApellidos(partec1[1]);
 				cliente.setDNI(partec1[2]);
 				cliente.setNum_Socio(Integer.parseInt(partec1[3]));
-				cliente.setDto(Double.parseDouble(partec1[4]));
+				cliente.setDto(Double.parseDouble(partec1[4]));*/
+				cliente.setNombre(partec[0]);
+				cliente.setApellidos(partec[1]);
+				cliente.setDNI(partec[2]);
+				cliente.setNum_Socio(Integer.parseInt(partec[3]));
+				cliente.setDto(Double.parseDouble(partec[4]));
 
-				partec2 = partec[1].split(",");
+				partec2 = partec[5].split(",");
 				Direccion direccion = new Direccion();
 				direccion.setPoblacion(partec2[0]);
 				direccion.setLocalidad(partec2[1]);
