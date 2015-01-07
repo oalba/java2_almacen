@@ -12,17 +12,19 @@ public class Almacen {
 
 			ArrayList<Distribuidor> distribuidores = new ArrayList<Distribuidor>();
 			String [] parte = null;
-			String [] parte1 = null;
+			//String [] parte1 = null;
 			String [] parte2 = null;
 			String [] parte3 = null;
 			while ((linea != null) || (linea == "")) {
 				parte = linea.split(";");
 				Distribuidor distribuidor = new Distribuidor();
-				parte1 = parte[0].split(",");
+				/*parte1 = parte[0].split(",");
 				distribuidor.setNombre(parte1[0]);
-				distribuidor.setCif(parte1[1]);
+				distribuidor.setCif(parte1[1]);*/
+				distribuidor.setNombre(parte[0]);
+				distribuidor.setCif(parte[1]);
 
-				parte2 = parte[1].split(",");
+				parte2 = parte[2].split(",");
 				Direccion direccion = new Direccion();
 				direccion.setPoblacion(parte2[0]);
 				direccion.setLocalidad(parte2[1]);
@@ -30,7 +32,7 @@ public class Almacen {
 				direccion.setNumero(Integer.parseInt(parte2[3]));
 				distribuidor.setDireccion(direccion);
 
-				parte3 = parte[2].split(",");
+				parte3 = parte[3].split(",");
 				Contacto contacto = new Contacto();
 				contacto.setNombre(parte3[0]);
 				contacto.setApellido(parte3[1]);
