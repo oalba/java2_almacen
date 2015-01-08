@@ -264,9 +264,6 @@ public class Almacen {
 				
 			}*/
 
-
-
-
 			/*
 			//12 ariketararte
 			File archivo = new File("./distribuidores.txt");
@@ -374,7 +371,6 @@ public class Almacen {
 				aleche.add(leche);
 			}
 
-
 			Iterator<Manzana> itrManzana = amanzana.iterator();
 			while(itrManzana.hasNext()){
 				Manzana manza = itrManzana.next();
@@ -452,7 +448,6 @@ public class Almacen {
 				
 			}*/
 
-
 			/*
 			//11 arriketa
 			Iterator<Distribuidor> itrDistribuidor = distribuidores.iterator();
@@ -495,7 +490,7 @@ public class Almacen {
 			//}
 			*/
 			
-
+			
 		 } catch (IOException ioe) {
 			System.out.println("Error: " + ioe);
 		}
