@@ -1,5 +1,4 @@
-
-public class Distribuidor {
+class Distribuidor {
 	//propiedades
 	private String nombre;
 	private String cif;
@@ -7,28 +6,28 @@ public class Distribuidor {
 	private Contacto personaContacto;
 
 	//metodos getter y setter
-	public void setNombre (String nom){
+	void setNombre (String nom){
 		nombre = nom;
 	}
-	public String getNombre(){
+	String getNombre(){
 		return nombre;
 	}
-	public void setCif (String cf){
+	void setCif (String cf){
 		cif = cf;
 	}
-	public String getCif(){
+	String getCif(){
 		return cif;
 	}
-	public void setDireccion (Direccion dir){
+	void setDireccion (Direccion dir){
 		direccion = dir;
 	}
-	public Direccion getDireccion(){
+	Direccion getDireccion(){
 		return direccion;
 	}
-	public void setPersonaContacto (Contacto pc){
+	void setPersonaContacto (Contacto pc){
 		personaContacto = pc;
 	}
-	public Contacto getPersonaContacto(){
+	Contacto getPersonaContacto(){
 		return personaContacto;
 	}
 }

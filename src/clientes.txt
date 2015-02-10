@@ -1,1 +1,1 @@
-josu;masime;99999999S;12;20;Gipuzkoa,Urnieta,Nagusia,12
+josu,masime,99999999S,12,20;Gipuzkoa,Urnieta,Nagusia,12

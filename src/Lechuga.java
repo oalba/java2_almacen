@@ -1,4 +1,4 @@
-public class Lechuga {
+class Lechuga {
 
 	//propiedades
 	private String tipoLechuga;
@@ -9,40 +9,40 @@ public class Lechuga {
 	private int cod_barras;
 
 	//métodos getter y setter
-	public void setTipoLechuga (String tl){
+	void setTipoLechuga (String tl){
 		tipoLechuga = tl;
 	}
-	public String getTipoLechuga(){
+	String getTipoLechuga(){
 		return tipoLechuga;
 	}
-	public void setProcedencia (String pro){
+	void setProcedencia (String pro){
 		procedencia = pro;
 	}
-	public String getProcedencia(){
+	String getProcedencia(){
 		return procedencia;
 	}
-	public void setColor (String col){
+	void setColor (String col){
 		color = col;
 	}
-	public String getColor(){
+	String getColor(){
 		return color;
 	}
-	public void setEurosUnidad (Double eu){
+	void setEurosUnidad (Double eu){
 		eurosUnidad = eu;
 	}
-	public Double getEurosUnidad(){
+	Double getEurosUnidad(){
 		return eurosUnidad;
 	}
-	public void setDistribuidor (Distribuidor dis){
+	void setDistribuidor (Distribuidor dis){
 		distribuidor = dis;
 	}
-	public Distribuidor getDistribuidor(){
+	Distribuidor getDistribuidor(){
 		return distribuidor;
 	}
-	public void setCod_Barras (Integer cb){
+	void setCod_Barras (Integer cb){
 		cod_barras = cb;
 	}
-	public Integer getCod_Barras(){
+	Integer getCod_Barras(){
 		return cod_barras;
 	}
 

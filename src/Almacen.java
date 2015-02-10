@@ -1,26 +1,28 @@
 import java.util.*;
 import java.io.*;
 
-public class Almacen {
+class Almacen {
 	public static void main(String[] args) throws IOException {
 		try {
 			
-			File archivo = new File("./distribuidores.txt");
+			File archivo = new File("/home/zubiri/AriketakJava/java2_almacen/src/distribuidores.txt");
 			FileReader fr = new FileReader(archivo);
 			BufferedReader br = new BufferedReader(fr);
 			String linea = br.readLine();
 
 			ArrayList<Distribuidor> distribuidores = new ArrayList<Distribuidor>();
 			String [] parte = null;
+			String [] parte1 = null;
 			String [] parte2 = null;
 			String [] parte3 = null;
 			while ((linea != null) || (linea == "")) {
 				parte = linea.split(";");
 				Distribuidor distribuidor = new Distribuidor();
-				distribuidor.setNombre(parte[0]);
-				distribuidor.setCif(parte[1]);
+				parte1 = parte[0].split(",");
+				distribuidor.setNombre(parte1[0]);
+				distribuidor.setCif(parte1[1]);
 
-				parte2 = parte[2].split(",");
+				parte2 = parte[1].split(",");
 				Direccion direccion = new Direccion();
 				direccion.setPoblacion(parte2[0]);
 				direccion.setLocalidad(parte2[1]);
@@ -28,7 +30,7 @@ public class Almacen {
 				direccion.setNumero(Integer.parseInt(parte2[3]));
 				distribuidor.setDireccion(direccion);
 
-				parte3 = parte[3].split(",");
+				parte3 = parte[2].split(",");
 				Contacto contacto = new Contacto();
 				contacto.setNombre(parte3[0]);
 				contacto.setApellido(parte3[1]);
@@ -42,24 +44,26 @@ public class Almacen {
 			
 			
 			
-			File archivo2 = new File("./clientes.txt");
+			File archivo2 = new File("/home/zubiri/AriketakJava/java2_almacen/src/clientes.txt");
 			FileReader fr2 = new FileReader(archivo2);
 			BufferedReader br2 = new BufferedReader(fr2);
 			String linea2 = br2.readLine();
 
 			ArrayList<Cliente> clientes = new ArrayList<Cliente>();
 			String [] partec = null;
+			String [] partec1 = null;
 			String [] partec2 = null;
 			while ((linea2 != null) || (linea2 == "")) {
 				partec = linea2.split(";");
 				Cliente cliente = new Cliente();
-				cliente.setNombre(partec[0]);
-				cliente.setApellidos(partec[1]);
-				cliente.setDNI(partec[2]);
-				cliente.setNum_Socio(Integer.parseInt(partec[3]));
-				cliente.setDto(Double.parseDouble(partec[4]));
+				partec1 = partec[0].split(",");
+				cliente.setNombre(partec1[0]);
+				cliente.setApellidos(partec1[1]);
+				cliente.setDNI(partec1[2]);
+				cliente.setNum_Socio(Integer.parseInt(partec1[3]));
+				cliente.setDto(Double.parseDouble(partec1[4]));
 
-				partec2 = partec[5].split(",");
+				partec2 = partec[1].split(",");
 				Direccion direccion = new Direccion();
 				direccion.setPoblacion(partec2[0]);
 				direccion.setLocalidad(partec2[1]);
@@ -71,6 +75,7 @@ public class Almacen {
 				linea2 = br2.readLine();
 			}
 			
+			//ArrayList<Producto> aproducto = new ArrayList<Producto>();
 			ArrayList<Manzana> amanzana = new ArrayList<Manzana>();
 			String nombred;
 			Manzana manzana = new Manzana();
@@ -92,6 +97,7 @@ public class Almacen {
 				}
 			}
 			amanzana.add(manzana);
+			//System.out.println(manzana);
 
 			Manzana manzana2 = new Manzana();
 			//tipo de manzana
@@ -112,6 +118,7 @@ public class Almacen {
 				}
 			}
 			amanzana.add(manzana2);
+			//System.out.println(manzana);
 
 			ArrayList<Lechuga> alechuga = new ArrayList<Lechuga>();
 			Lechuga lechuga = new Lechuga();
@@ -177,23 +184,29 @@ public class Almacen {
 						cesta.setAmanzana(amanzana);
 						acesta.add(cesta);
 						mtotal = mtotal + amanzana.get(m).getEurosKilo();
+						//System.out.println(mtotal);
 					}
+					//System.out.println(ptotal);
 				}
 				for (int le = 0; le < alechuga.size(); le++) {
 					if(cod_barras == alechuga.get(le).getCod_Barras()){
 						cesta.setAlechuga(alechuga);
 						acesta.add(cesta);
 						lutotal = lutotal + alechuga.get(le).getEurosUnidad();
+						//System.out.println(lutotal);
 					}
+					//System.out.println(ptotal);
 				}
 				for (int lee = 0; lee < aleche.size(); lee++) {
 					if(cod_barras == aleche.get(lee).getCod_Barras()){
 						cesta.setAleche(aleche);
 						acesta.add(cesta);
 						letotal = letotal + aleche.get(lee).getEurosLitro();
+						//System.out.println(letotal);
 					}
 				}	
 				ptotal = mtotal + lutotal + letotal;
+				//System.out.println(ptotal);			
 			}
 			System.out.println("El precio total sin el descuento es: " + ptotal);
 
@@ -204,6 +217,7 @@ public class Almacen {
 					System.out.println("Tu descuento es del " + desc + "%");
 				}
 			}
+			//ptotal = (ptotal-desc);
 
 			System.out.println("El precio total con el descuento es: " + ptotal);
 
@@ -213,7 +227,7 @@ public class Almacen {
 
 			/*
 			//13 Ariketararte
-			File archivo2 = new File("./clientes.txt");
+			File archivo2 = new File("/home/zubiri/AriketakJava/java2_almacen/src/clientes.txt");
 			FileReader fr2 = new FileReader(archivo2);
 			BufferedReader br2 = new BufferedReader(fr2);
 			String linea2 = br2.readLine();
@@ -264,9 +278,12 @@ public class Almacen {
 				
 			}*/
 
+
+
+
 			/*
 			//12 ariketararte
-			File archivo = new File("./distribuidores.txt");
+			File archivo = new File("/home/zubiri/AriketakJava/java2_almacen/src/distribuidores.txt");
 			FileReader fr = new FileReader(archivo);
 			BufferedReader br = new BufferedReader(fr);
 			String linea = br.readLine();
@@ -371,6 +388,7 @@ public class Almacen {
 				aleche.add(leche);
 			}
 
+
 			Iterator<Manzana> itrManzana = amanzana.iterator();
 			while(itrManzana.hasNext()){
 				Manzana manza = itrManzana.next();
@@ -448,6 +466,7 @@ public class Almacen {
 				
 			}*/
 
+
 			/*
 			//11 arriketa
 			Iterator<Distribuidor> itrDistribuidor = distribuidores.iterator();
@@ -490,7 +509,7 @@ public class Almacen {
 			//}
 			*/
 			
-			
+
 		 } catch (IOException ioe) {
 			System.out.println("Error: " + ioe);
 		}

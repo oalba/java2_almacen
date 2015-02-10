@@ -1,5 +1,5 @@
 import java.util.*;
-public class Cesta {
+class Cesta {
 
 	//propiedades
 	//Cliente
@@ -9,22 +9,22 @@ public class Cesta {
 	ArrayList<Leche> aleche;
 
 	//métodos getter y setter
-	public void setAmanzana (ArrayList<Manzana> manza){
+	void setAmanzana (ArrayList<Manzana> manza){
 		amanzana = manza;
 	}
-	public ArrayList<Manzana> getAmanzana(){
+	ArrayList<Manzana> getAmanzana(){
 		return amanzana;
 	}
-	public void setAlechuga (ArrayList<Lechuga> lechu){
+	void setAlechuga (ArrayList<Lechuga> lechu){
 		alechuga = lechu;
 	}
-	public ArrayList<Lechuga> getAlechuga(){
+	ArrayList<Lechuga> getAlechuga(){
 		return alechuga;
 	}
-	public void setAleche (ArrayList<Leche> leche){
+	void setAleche (ArrayList<Leche> leche){
 		aleche = leche;
 	}
-	public ArrayList<Leche> getAleche(){
+	ArrayList<Leche> getAleche(){
 		return aleche;
 	}
 

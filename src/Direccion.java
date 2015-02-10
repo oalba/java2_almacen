@@ -1,4 +1,4 @@
-public class Direccion {
+class Direccion {
 
 	//añadid las propiedades convenientes
 	private String poblacion;
@@ -7,28 +7,28 @@ public class Direccion {
 	private int numero;
 
 	//métodos getter y setter
-	public void setPoblacion (String pob){
+	void setPoblacion (String pob){
 		poblacion = pob;
 	}
-	public String getPoblacion(){
+	String getPoblacion(){
 		return poblacion;
 	}
-	public void setLocalidad (String pueblo){
+	void setLocalidad (String pueblo){
 		localidad = pueblo;
 	}
-	public String getLocalidad(){
+	String getLocalidad(){
 		return localidad;
 	}
-	public void setCalle (String cal){
+	void setCalle (String cal){
 		calle = cal;
 	}
-	public String getCalle(){
+	String getCalle(){
 		return calle;
 	}
-	public void setNumero (int num){
+	void setNumero (int num){
 		numero = num;
 	}
-	public int getNumero(){
+	int getNumero(){
 		return numero;
 	}
 }
