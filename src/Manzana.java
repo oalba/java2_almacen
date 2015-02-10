@@ -1,48 +1,48 @@
-class Manzana {
+class Manzana extends Producto {
 	//propiedades
-	private String tipoManzana;
-	private String procedencia;
-	private String color;
-	private Double eurosKilo;
-	private Distribuidor distribuidor;
-	private int cod_barras;
+	//private String tipoManzana;
+	//private String procedencia;
+	//private String color;
+	//private Double eurosKilo;
+	//private Distribuidor distribuidor;
+	//private int cod_barras;
 
 	//métodos getter y setter
-	void setTipoManzana (String tm){
+	/*void setTipoManzana (String tm){
 		tipoManzana = tm;
 	}
-	String getTipoManzana(){
+	final String getTipoManzana(){
 		return tipoManzana;
-	}
-	void setProcedencia (String pro){
+	}*/
+	/*void setProcedencia (String pro){
 		procedencia = pro;
 	}
-	String getProcedencia(){
+	final String getProcedencia(){
 		return procedencia;
-	}
-	void setColor (String col){
+	}*/
+	/*void setColor (String col){
 		color = col;
 	}
-	String getColor(){
+	final String getColor(){
 		return color;
-	}
-	void setEurosKilo (Double ek){
+	}*/
+	/*void setEurosKilo (Double ek){
 		eurosKilo = ek;
 	}
-	Double getEurosKilo(){
+	final Double getEurosKilo(){
 		return eurosKilo;
-	}
-	void setDistribuidor (Distribuidor dis){
+	}*/
+	/*void setDistribuidor (Distribuidor dis){
 		distribuidor = dis;
 	}
-	Distribuidor getDistribuidor(){
+	final Distribuidor getDistribuidor(){
 		return distribuidor;
-	}
-	void setCod_Barras (Integer cb){
+	}*/
+	/*void setCod_Barras (Integer cb){
 		cod_barras = cb;
 	}
-	Integer getCod_Barras(){
+	final Integer getCod_Barras(){
 		return cod_barras;
-	}
+	}*/
 
 }

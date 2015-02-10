@@ -12,37 +12,37 @@ class Cliente {
 	void setNombre (String nom){
 		nombre = nom;
 	}
-	String getNombre(){
+	final String getNombre(){
 		return nombre;
 	}
 	void setApellidos (String ape){
 		apellidos = ape;
 	}
-	String getApellidos(){
+	final String getApellidos(){
 		return apellidos;
 	}
 	void setDNI (String dn){
 		DNI = dn;
 	}
-	String getDNI(){
+	final String getDNI(){
 		return DNI;
 	}
 	void setDireccion (Direccion dir){
 		direccion = dir;
 	}
-	Direccion getDireccion(){
+	final Direccion getDireccion(){
 		return direccion;
 	}
 	void setNum_Socio (int ns){
 		num_socio = ns;
 	}
-	int getNum_Socio(){
+	final int getNum_Socio(){
 		return num_socio;
 	}
 	void setDto (Double dt){
 		dto = dt;
 	}
-	Double getDto(){
+	final Double getDto(){
 		return dto;
 	}
 }

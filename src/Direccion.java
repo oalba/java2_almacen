@@ -10,25 +10,25 @@ class Direccion {
 	void setPoblacion (String pob){
 		poblacion = pob;
 	}
-	String getPoblacion(){
+	final String getPoblacion(){
 		return poblacion;
 	}
 	void setLocalidad (String pueblo){
 		localidad = pueblo;
 	}
-	String getLocalidad(){
+	final String getLocalidad(){
 		return localidad;
 	}
 	void setCalle (String cal){
 		calle = cal;
 	}
-	String getCalle(){
+	final String getCalle(){
 		return calle;
 	}
 	void setNumero (int num){
 		numero = num;
 	}
-	int getNumero(){
+	final int getNumero(){
 		return numero;
 	}
 }
