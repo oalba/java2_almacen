@@ -3,9 +3,12 @@ import java.io.*;
 
 class Almacen {
 	public static void main(String[] args) throws IOException {
-		try {
+		//try {
+			ArrayList<Distribuidor> distribuidores = new ArrayList<Distribuidor>();
+			distribuidores = Distribuidor.leerDistri();
 			
-			File archivo = new File("/home/zubiri/AriketakJava/java2_almacen/src/distribuidores.txt");
+//{
+			/*File archivo = new File("/home/zubiri/AriketakJava/java2_almacen/src/distribuidores.txt");
 			FileReader fr = new FileReader(archivo);
 			BufferedReader br = new BufferedReader(fr);
 			String linea = br.readLine();
@@ -40,11 +43,13 @@ class Almacen {
 
 				distribuidores.add(distribuidor);
 				linea = br.readLine();
-			}
+			}*/
+//}
 			
+			ArrayList<Cliente> clientes = new ArrayList<Cliente>();
+			clientes = Cliente.leerClientes();
 			
-			
-			File archivo2 = new File("/home/zubiri/AriketakJava/java2_almacen/src/clientes.txt");
+			/*File archivo2 = new File("/home/zubiri/AriketakJava/java2_almacen/src/clientes.txt");
 			FileReader fr2 = new FileReader(archivo2);
 			BufferedReader br2 = new BufferedReader(fr2);
 			String linea2 = br2.readLine();
@@ -73,9 +78,13 @@ class Almacen {
 
 				clientes.add(cliente);
 				linea2 = br2.readLine();
-			}
+			}*/
 			
-			//ArrayList<Producto> aproducto = new ArrayList<Producto>();
+
+			ArrayList<Manzana> amanzana = new ArrayList<Manzana>();
+			amanzana = Manzana.añaManza();
+//{
+			/*//ArrayList<Producto> aproducto = new ArrayList<Producto>();
 			ArrayList<Manzana> amanzana = new ArrayList<Manzana>();
 			String nombred;
 			Manzana manzana = new Manzana();
@@ -91,11 +100,11 @@ class Almacen {
 			manzana.setCod_Barras(1001);
 			//distribuidor
 			nombred = "odei";
-			for (int i = 0; i < distribuidores.size(); i++) {
+			/*for (int i = 0; i < distribuidores.size(); i++) {
 				if (nombred.equalsIgnoreCase(distribuidores.get(i).getNombre())) {
 					manzana.setDistribuidor(distribuidores.get(i));
 				}
-			}
+			}* /
 			amanzana.add(manzana);
 			//System.out.println(manzana);
 
@@ -112,15 +121,18 @@ class Almacen {
 			manzana2.setCod_Barras(1002);
 			//distribuidor
 			nombred = "odei";
-			for (int i = 0; i < distribuidores.size(); i++) {
+			/*for (int i = 0; i < distribuidores.size(); i++) {
 				if (nombred.equalsIgnoreCase(distribuidores.get(i).getNombre())) {
 					manzana2.setDistribuidor(distribuidores.get(i));
 				}
-			}
+			}* /
 			amanzana.add(manzana2);
-			//System.out.println(manzana);
-
+			//System.out.println(manzana);*/
+//}
 			ArrayList<Lechuga> alechuga = new ArrayList<Lechuga>();
+			alechuga = Lechuga.añaLechu();
+//{
+			/*ArrayList<Lechuga> alechuga = new ArrayList<Lechuga>();
 			Lechuga lechuga = new Lechuga();
 			//Tipo de lechuga
 			lechuga.setTipoLechuga("Normal");
@@ -139,10 +151,14 @@ class Almacen {
 					lechuga.setDistribuidor(distribuidores.get(i));
 				}
 			}
-			alechuga.add(lechuga);
-
+			alechuga.add(lechuga);*/
+//}
 
 			ArrayList<Leche> aleche = new ArrayList<Leche>();
+			aleche = Leche.añaLeche();
+
+//{
+			/*ArrayList<Leche> aleche = new ArrayList<Leche>();
 			Leche leche = new Leche();
 			//Tipo de leche
 			leche.setTipo("vaca");
@@ -159,7 +175,8 @@ class Almacen {
 					leche.setDistribuidor(distribuidores.get(i));
 				}
 			}
-			aleche.add(leche);
+			aleche.add(leche);*/
+//}
 
 			Scanner sc = new Scanner(System.in);
 			int socio;
@@ -220,7 +237,6 @@ class Almacen {
 			//ptotal = (ptotal-desc);
 
 			System.out.println("El precio total con el descuento es: " + ptotal);
-
 
 
 //EZ BORRATU EZER!!!!
@@ -510,9 +526,9 @@ class Almacen {
 			*/
 			
 
-		 } catch (IOException ioe) {
-			System.out.println("Error: " + ioe);
-		}
+		//} catch (IOException ioe) {
+		//	System.out.println("Error: " + ioe);
+		//}
 
 	}
 	
