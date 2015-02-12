@@ -28,6 +28,4 @@ class Cesta {
 		return aleche;
 	}
 
-	//método calcular importe compra
-
 }

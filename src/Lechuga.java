@@ -46,6 +46,37 @@ class Lechuga extends Producto {
 			alechuga.add(lechuga);
 		return alechuga;
 	}
+	/*static Iterator<Lechuga> impriLechu() {
+		ArrayList<Lechuga> alechuga = new ArrayList<Lechuga>();
+		alechuga = Lechuga.añaLechu();
+		Iterator<Lechuga> itrLechuga = alechuga.iterator();
+			while(itrLechuga.hasNext()){
+				Lechuga lechu = itrLechuga.next();
+				System.out.println("#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#");
+				System.out.println("Tipo de lechuga: " + lechu.getTipoLechuga());
+				System.out.println("Procedencia: " + lechu.getProcedencia());
+				System.out.println("Color: " + lechu.getColor());
+				System.out.println("Precio (€ por unidad): " + lechu.getEurosUnidad());
+				System.out.println("Código de barras: " + lechu.getCod_Barras());
+				System.out.println("********Distribuidor********");
+				System.out.println("--Datos--");
+				System.out.println("Nombre: " + lechu.getDistribuidor().getNombre());
+				System.out.println("CIF: " + lechu.getDistribuidor().getCif());
+				System.out.println("--Direccion--");
+				System.out.println("Población: " + lechu.getDistribuidor().getDireccion().getPoblacion());
+				System.out.println("Localidad: " + lechu.getDistribuidor().getDireccion().getLocalidad());
+				System.out.println("Calle: " + lechu.getDistribuidor().getDireccion().getCalle());
+				System.out.println("Número: " + lechu.getDistribuidor().getDireccion().getNumero());
+				System.out.println("--Contacto--");
+				System.out.println("Nombre: " + lechu.getDistribuidor().getPersonaContacto().getNombre());
+				System.out.println("Apellido: " + lechu.getDistribuidor().getPersonaContacto().getApellido());
+				System.out.println("E-mail: " + lechu.getDistribuidor().getPersonaContacto().getEmail());
+				System.out.println("Teléfono: " + lechu.getDistribuidor().getPersonaContacto().getTelefono());
+				System.out.println();
+				
+			}
+			return itrLechuga;
+	}*/
 
 
 }

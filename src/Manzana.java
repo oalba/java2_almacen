@@ -68,5 +68,36 @@ class Manzana extends Producto {
 			//System.out.println(manzana);
 			return amanzana;
 	}
+	/*static Iterator<Manzana> impriManza() {
+		ArrayList<Manzana> amanzana = new ArrayList<Manzana>();
+		amanzana = Manzana.añaManza();
+		Iterator<Manzana> itrManzana = amanzana.iterator();
+			while(itrManzana.hasNext()){
+				Manzana manza = itrManzana.next();
+				System.out.println("#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#@#");
+				System.out.println("Tipo de manzana: " + manza.getTipoManzana());
+				System.out.println("Procedencia: " + manza.getProcedencia());
+				System.out.println("Color: " + manza.getColor());
+				System.out.println("Precio (€ por Kg): " + manza.getEurosKilo());
+				System.out.println("Código de barras: " + manza.getCod_Barras());
+				System.out.println("********Distribuidor********");
+				System.out.println("--Datos--");
+				System.out.println("Nombre: " + manza.getDistribuidor().getNombre());
+				System.out.println("CIF: " + manza.getDistribuidor().getCif());
+				System.out.println("--Direccion--");
+				System.out.println("Población: " + manza.getDistribuidor().getDireccion().getPoblacion());
+				System.out.println("Localidad: " + manza.getDistribuidor().getDireccion().getLocalidad());
+				System.out.println("Calle: " + manza.getDistribuidor().getDireccion().getCalle());
+				System.out.println("Número: " + manza.getDistribuidor().getDireccion().getNumero());
+				System.out.println("--Contacto--");
+				System.out.println("Nombre: " + manza.getDistribuidor().getPersonaContacto().getNombre());
+				System.out.println("Apellido: " + manza.getDistribuidor().getPersonaContacto().getApellido());
+				System.out.println("E-mail: " + manza.getDistribuidor().getPersonaContacto().getEmail());
+				System.out.println("Teléfono: " + manza.getDistribuidor().getPersonaContacto().getTelefono());
+				System.out.println();
+				
+			}
+			return itrManzana;
+	}*/
 
 }

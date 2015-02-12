@@ -1,1 +1,4 @@
+odei,alba,75468978Q,1,50;Gipuzkoa,Hernani,Ereñozu,79
+aaaa,bbbb,22222222C,2,30;Araba,Gasteiz,Martxo,16
+dddd,eeee,33333333F,3,25;Bizkaia,Bilbo,Apila,25
 josu,masime,99999999S,12,20;Gipuzkoa,Urnieta,Nagusia,12
