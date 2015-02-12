@@ -46,6 +46,7 @@ class Lechuga extends Producto {
 			alechuga.add(lechuga);
 		return alechuga;
 	}
+//{
 	/*static Iterator<Lechuga> impriLechu() {
 		ArrayList<Lechuga> alechuga = new ArrayList<Lechuga>();
 		alechuga = Lechuga.añaLechu();
@@ -77,6 +78,7 @@ class Lechuga extends Producto {
 			}
 			return itrLechuga;
 	}*/
+//}
 
 
 }

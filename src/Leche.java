@@ -44,6 +44,7 @@ class Leche extends Producto {
 
 		}
 
+//{
 		/*static Iterator<Leche> impriLeche() {
 		ArrayList<Leche> aleche = new ArrayList<Leche>();
 		aleche = Leche.añaLeche();
@@ -69,10 +70,10 @@ class Leche extends Producto {
 				System.out.println("Apellido: " + leche.getDistribuidor().getPersonaContacto().getApellido());
 				System.out.println("E-mail: " + leche.getDistribuidor().getPersonaContacto().getEmail());
 				System.out.println("Teléfono: " + leche.getDistribuidor().getPersonaContacto().getTelefono());
-				System.out.println();
-				
+				System.out.println();	
 			}
 			return itrLeche;
-	}*/
+		}*/
+//}
 
 }
