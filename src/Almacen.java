@@ -4,9 +4,111 @@ import java.io.*;
 class Almacen {
 	public static void main(String[] args) throws IOException {
 		//try {
-			//ArrayList<Distribuidor> distribuidores = new ArrayList<Distribuidor>();
-			//distribuidores = Distribuidor.leerDistri();
 			
+			ArrayList<Cliente> clientes = new ArrayList<Cliente>();
+			clientes = Cliente.leerClientes();
+			
+			ArrayList<Manzana> amanzana = new ArrayList<Manzana>();
+			amanzana = Manzana.añaManza();
+
+			ArrayList<Lechuga> alechuga = new ArrayList<Lechuga>();
+			alechuga = Lechuga.añaLechu();
+
+			ArrayList<Leche> aleche = new ArrayList<Leche>();
+			aleche = Leche.añaLeche();
+
+			int aukera = 0;
+			Scanner sc2 = new Scanner(System.in);
+			do{
+			System.out.println("\n¿Qué deseas hacer?");
+			System.out.println("1) Ver los productos disponibles.");
+			System.out.println("2) Realizar un pedido.");
+			System.out.println("0) Salir");
+			aukera = sc2.nextInt();
+			switch (aukera) {
+				case 1:{
+					System.out.println("\n+-------------------------------------+");
+					System.out.println("| ESTOS SON LOS PRODUCTOS DISPONIBLES |");
+					System.out.println("+-------------------------------------+");
+					System.out.println("MANZANA");
+					Producto.impriManza();
+					System.out.println("LECHUGA");
+					Producto.impriLechu();
+					System.out.println("LECHE");
+					Producto.impriLeche();
+					break;
+				}
+				case 2:{
+					Scanner sc = new Scanner(System.in);
+					int socio;
+					int cant_prod;
+					int cod_barras;
+					Double ptotal = 0.0;
+					Double mtotal = 0.0;
+					Double lutotal = 0.0;
+					Double letotal = 0.0;
+					Double desc;
+					Cesta cesta = new Cesta();
+					System.out.println("\nIntroduce tu número de socio: ");
+					socio = sc.nextInt();
+					System.out.println("¿Cuantos productos quieres añadir?");
+					cant_prod = sc.nextInt();
+					for (int c = 0; c < cant_prod; c++) {
+						System.out.println("Introduce el código de barras del producto: ");
+						cod_barras = sc.nextInt();
+						ArrayList<Cesta> acesta = new ArrayList<Cesta>();
+						for (int m = 0; m < amanzana.size(); m++) {
+							if(cod_barras == amanzana.get(m).getCod_Barras()){
+								cesta.setAmanzana(amanzana);
+								acesta.add(cesta);
+								mtotal = mtotal + amanzana.get(m).getEurosKilo();
+							}
+						}
+						for (int le = 0; le < alechuga.size(); le++) {
+							if(cod_barras == alechuga.get(le).getCod_Barras()){
+								cesta.setAlechuga(alechuga);
+								acesta.add(cesta);
+								lutotal = lutotal + alechuga.get(le).getEurosUnidad();
+							}
+						}
+						for (int lee = 0; lee < aleche.size(); lee++) {
+							if(cod_barras == aleche.get(lee).getCod_Barras()){
+								cesta.setAleche(aleche);
+								acesta.add(cesta);
+								letotal = letotal + aleche.get(lee).getEurosLitro();
+							}
+						}	
+						ptotal = mtotal + lutotal + letotal;			
+					}
+
+					System.out.println("El precio total sin el descuento es: " + ptotal);
+
+					for (int so = 0; so < clientes.size(); so++){
+						if(socio == clientes.get(so).getNum_Socio()){
+							desc = clientes.get(so).getDto();
+							ptotal = ptotal - ((ptotal*desc)/100);
+							System.out.println("Tu descuento es del " + desc + "%");
+						}
+					}
+
+					System.out.println("El precio total con el descuento es: " + ptotal);
+				}
+				case 0:{
+					break;
+				}
+				default:{
+					System.out.println("¡El número introducido es erroneo!");
+				}
+			}
+			}while (aukera!=0);
+		//} catch (IOException ioe) {
+		//	System.out.println("Error: " + ioe);
+		//}
+	}
+}
+					
+		
+
 //{
 			/*File archivo = new File("/home/zubiri/AriketakJava/java2_almacen/src/distribuidores.txt");
 			FileReader fr = new FileReader(archivo);
@@ -44,12 +146,10 @@ class Almacen {
 				distribuidores.add(distribuidor);
 				linea = br.readLine();
 			}*/
-//}
-			
-			ArrayList<Cliente> clientes = new ArrayList<Cliente>();
-			clientes = Cliente.leerClientes();
-			
-//{
+
+
+
+
 			/*File archivo2 = new File("/home/zubiri/AriketakJava/java2_almacen/src/clientes.txt");
 			FileReader fr2 = new FileReader(archivo2);
 			BufferedReader br2 = new BufferedReader(fr2);
@@ -80,12 +180,10 @@ class Almacen {
 				clientes.add(cliente);
 				linea2 = br2.readLine();
 			}*/
-//}
 
-			ArrayList<Manzana> amanzana = new ArrayList<Manzana>();
-			amanzana = Manzana.añaManza();
 
-//{
+
+
 			/*//ArrayList<Producto> aproducto = new ArrayList<Producto>();
 			ArrayList<Manzana> amanzana = new ArrayList<Manzana>();
 			String nombred;
@@ -130,12 +228,9 @@ class Almacen {
 			}* /
 			amanzana.add(manzana2);
 			//System.out.println(manzana);*/
-//}
 
-			ArrayList<Lechuga> alechuga = new ArrayList<Lechuga>();
-			alechuga = Lechuga.añaLechu();
 
-//{
+
 			/*ArrayList<Lechuga> alechuga = new ArrayList<Lechuga>();
 			Lechuga lechuga = new Lechuga();
 			//Tipo de lechuga
@@ -156,12 +251,8 @@ class Almacen {
 				}
 			}
 			alechuga.add(lechuga);*/
-//}
 
-			ArrayList<Leche> aleche = new ArrayList<Leche>();
-			aleche = Leche.añaLeche();
 
-//{
 			/*ArrayList<Leche> aleche = new ArrayList<Leche>();
 			Leche leche = new Leche();
 			//Tipo de leche
@@ -180,105 +271,10 @@ class Almacen {
 				}
 			}
 			aleche.add(leche);*/
-//}
-			int aukera = 0;
-			Scanner sc2 = new Scanner(System.in);
-			do{
-			System.out.println("\n¿Qué deseas hacer?");
-			System.out.println("1) Ver los productos disponibles.");
-			System.out.println("2) Realizar un pedido.");
-			System.out.println("0) Salir");
-			aukera = sc2.nextInt();
-			switch (aukera) {
-				case 1:{
-					System.out.println("\n+-------------------------------------+");
-					System.out.println("| ESTOS SON LOS PRODUCTOS DISPONIBLES |");
-					System.out.println("+-------------------------------------+");
-					//Producto.impriProdu();
-					System.out.println("MANZANA");
-					Producto.impriManza();
-					System.out.println("LECHUGA");
-					Producto.impriLechu();
-					System.out.println("LECHE");
-					Producto.impriLeche();
-					break;
-				}
-				case 2:{
-					Scanner sc = new Scanner(System.in);
-					int socio;
-					int cant_prod;
-					int cod_barras;
-					Double ptotal = 0.0;
-					Double mtotal = 0.0;
-					Double lutotal = 0.0;
-					Double letotal = 0.0;
-					Double desc;
-					Cesta cesta = new Cesta();
-					System.out.println("\nIntroduce tu número de socio: ");
-					socio = sc.nextInt();
-					System.out.println("¿Cuantos productos quieres añadir?");
-					cant_prod = sc.nextInt();
-					for (int c = 0; c < cant_prod; c++) {
-						System.out.println("Introduce el código de barras del producto: ");
-						cod_barras = sc.nextInt();
-						ArrayList<Cesta> acesta = new ArrayList<Cesta>();
-						for (int m = 0; m < amanzana.size(); m++) {
-							if(cod_barras == amanzana.get(m).getCod_Barras()){
-								cesta.setAmanzana(amanzana);
-								acesta.add(cesta);
-								mtotal = mtotal + amanzana.get(m).getEurosKilo();
-								//System.out.println(mtotal);
-							}
-							//System.out.println(ptotal);
-						}
-						for (int le = 0; le < alechuga.size(); le++) {
-							if(cod_barras == alechuga.get(le).getCod_Barras()){
-								cesta.setAlechuga(alechuga);
-								acesta.add(cesta);
-								lutotal = lutotal + alechuga.get(le).getEurosUnidad();
-								//System.out.println(lutotal);
-							}
-							//System.out.println(ptotal);
-						}
-						for (int lee = 0; lee < aleche.size(); lee++) {
-							if(cod_barras == aleche.get(lee).getCod_Barras()){
-								cesta.setAleche(aleche);
-								acesta.add(cesta);
-								letotal = letotal + aleche.get(lee).getEurosLitro();
-								//System.out.println(letotal);
-							}
-						}	
-						ptotal = mtotal + lutotal + letotal;
-						//System.out.println(ptotal);			
-					}
-					//System.out.println("Tu pedido contiene: ");
 
-					System.out.println("El precio total sin el descuento es: " + ptotal);
 
-					for (int so = 0; so < clientes.size(); so++){
-						if(socio == clientes.get(so).getNum_Socio()){
-							desc = clientes.get(so).getDto();
-							ptotal = ptotal - ((ptotal*desc)/100);
-							System.out.println("Tu descuento es del " + desc + "%");
-						}
-					}
-					//ptotal = (ptotal-desc);
-
-					System.out.println("El precio total con el descuento es: " + ptotal);
-				}
-				case 0:{
-					break;
-				}
-				default:{
-					System.out.println("¡El número introducido es erroneo!");
-				}
-			}
-			}while (aukera!=0);
-					
-				
 			
-			
-//{
+
 			/*Iterator<Manzana> itrManzana = amanzana.iterator();
 			while(itrManzana.hasNext()){
 				Manzana manza = itrManzana.next();
@@ -358,9 +354,7 @@ class Almacen {
 				System.out.println();
 				
 			}*/
-//}
-
-			
+//}		
 
 
 //EZ BORRATU EZER!!!!
@@ -648,12 +642,3 @@ class Almacen {
 				
 			//}
 			*/
-			
-
-		//} catch (IOException ioe) {
-		//	System.out.println("Error: " + ioe);
-		//}
-
-	}
-	
-}
