@@ -73,8 +73,8 @@ class Distribuidor {
 				linea = br.readLine();
 			}
 			return distribuidores;
-		} catch (IOException ioe) {
-			System.out.println("Error: " + ioe);
+		} catch (Exception ioe) {
+			System.out.println("¡El archivo indicado no existe! \nError: " + ioe);
 		}
 		return null;
 	}

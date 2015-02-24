@@ -82,8 +82,8 @@ class Cliente {
 				linea2 = br2.readLine();
 			}
 			return clientes;
-		} catch (IOException ioe) {
-			System.out.println("Error: " + ioe);
+		} catch (Exception ioe) {
+			System.out.println("\n¡El archivo indicado no existe! \nError: " + ioe);
 		}
 		return null;
 	}

@@ -2,8 +2,8 @@ import java.util.*;
 import java.io.*;
 
 class Almacen {
-	public static void main(String[] args) throws IOException {
-		//try {
+	public static void main(String[] args) throws Exception {		
+		try {
 			
 			ArrayList<Cliente> clientes = new ArrayList<Cliente>();
 			clientes = Cliente.leerClientes();
@@ -43,6 +43,7 @@ class Almacen {
 					int socio;
 					int cant_prod;
 					int cod_barras;
+					
 					Double ptotal = 0.0;
 					Double mtotal = 0.0;
 					Double lutotal = 0.0;
@@ -54,6 +55,7 @@ class Almacen {
 					System.out.println("¿Cuantos productos quieres añadir?");
 					cant_prod = sc.nextInt();
 					for (int c = 0; c < cant_prod; c++) {
+						int err = 2;
 						System.out.println("Introduce el código de barras del producto: ");
 						cod_barras = sc.nextInt();
 						ArrayList<Cesta> acesta = new ArrayList<Cesta>();
@@ -62,25 +64,32 @@ class Almacen {
 								cesta.setAmanzana(amanzana);
 								acesta.add(cesta);
 								mtotal = mtotal + amanzana.get(m).getEurosKilo();
-							}
+								err = 0;
+							} else if(err == 2) {err = 1;}
 						}
 						for (int le = 0; le < alechuga.size(); le++) {
 							if(cod_barras == alechuga.get(le).getCod_Barras()){
 								cesta.setAlechuga(alechuga);
 								acesta.add(cesta);
 								lutotal = lutotal + alechuga.get(le).getEurosUnidad();
-							}
+								err = 0;
+							} else if(err == 2) {err = 1;}
 						}
 						for (int lee = 0; lee < aleche.size(); lee++) {
 							if(cod_barras == aleche.get(lee).getCod_Barras()){
 								cesta.setAleche(aleche);
 								acesta.add(cesta);
 								letotal = letotal + aleche.get(lee).getEurosLitro();
-							}
+								err = 0;
+							} else if(err == 2) {err = 1;}
 						}	
-						ptotal = mtotal + lutotal + letotal;			
+						if (err == 0) {
+							ptotal = mtotal + lutotal + letotal;
+						} else {
+							throw new Exception("\n¡El producto indicado no existe!");
+						}			
 					}
-
+					
 					System.out.println("El precio total sin el descuento es: " + ptotal);
 
 					for (int so = 0; so < clientes.size(); so++){
@@ -92,6 +101,7 @@ class Almacen {
 					}
 
 					System.out.println("El precio total con el descuento es: " + ptotal);
+						
 				}
 				case 0:{
 					break;
@@ -101,9 +111,12 @@ class Almacen {
 				}
 			}
 			}while (aukera!=0);
-		//} catch (IOException ioe) {
-		//	System.out.println("Error: " + ioe);
-		//}
+		} catch (Exception ioe) {
+			System.out.println("¡Lo sentimos! ¡Ha habido un error con su compra! \nError: " + ioe);
+		} finally {
+			System.out.println("¡Gracias por haber realizado su compra!");
+		}
+
 	}
 }
 					
